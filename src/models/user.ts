@@ -73,7 +73,7 @@ class User extends Model {
       try {
         const hashedPassword = await bcrypt.hash(instance.password, saltRounds);
         instance.password = hashedPassword;
-      } catch (error) {
+      } catch (error:any) {
         throw new Error(`Error hashing password: ${error.message}`);
       }
     }
@@ -86,7 +86,7 @@ class User extends Model {
       try {
         const hashedPassword = await bcrypt.hash(instance.password, saltRounds);
         instance.password = hashedPassword;
-      } catch (error) {
+      } catch (error:any) {
         throw new Error(`Error hashing password during update: ${error.message}`);
       }
     }
