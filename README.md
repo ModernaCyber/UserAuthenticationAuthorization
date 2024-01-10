@@ -4,6 +4,7 @@
 This project is an Express.js server built with TypeScript, Sequelize, and PostgreSQL for user authentication and authorization. It uses JSON Web Tokens (JWT) for token-based authentication and supports two user roles: "user" and "admin."
 
 ## Table of Contents
+
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -12,27 +13,33 @@ This project is an Express.js server built with TypeScript, Sequelize, and Postg
   - [Testing](#testing)
   - [Swagger Documentation](#swagger-documentation)
 - [Folder Structure](#folder-structure)
-- [Dependencies](#dependencies)
-- [Development Dependencies](#development-dependencies)
 - [License](#license)
-  
+
 ## Getting Started
 
 ### Prerequisites
+
 Make sure you have the following installed on your machine:
+
 - [Node.js](https://nodejs.org/)
 - [PostgreSQL](https://www.postgresql.org/)
 
 ### Installation
+
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/your-username/userauthenticationauthorization.git
+   git clone https://github.com/ModernaCyber/UserAuthenticationAuthorization.git
    ```
+
 2. Navigate to the project directory:
+
    ```bash
    cd userauthenticationauthorization
    ```
+
 3. Install dependencies:
+
    ```bash
    npm install
    ```
@@ -40,25 +47,35 @@ Make sure you have the following installed on your machine:
 ## Usage
 
 ### Running the Server
+
 - Run the development server:
+
   ```bash
   npm run dev
   ```
+
 - The server will be running at http://localhost:3000 by default.
 
+- To Test the Api via Postman import the postman collection into postman.
+
 ### Testing
+
 - Run tests:
+
   ```bash
   npm test
   ```
 
 ### Swagger Documentation
+
 - Swagger documentation is available at http://localhost:3000/api-docs after starting the server.
 
 ## Folder Structure
+
 - `dist/`: Compiled TypeScript files (output of the build process).
 - `node_modules/`: Node.js modules and dependencies.
 - `src/`: Source code.
+
   - `config/`: Configuration files.
   - `controllers/`: Request handlers.
   - `db/`: Database configuration and connection.
@@ -68,10 +85,12 @@ Make sure you have the following installed on your machine:
   - `utils/`: Utility functions.
   - `app.ts`: Express application setup.
   - `server.ts`: Server entry point.
+
 - `test/`: Test files.
 - `.env`: Environment variables configuration.
 - `jest.config.js`: Jest configuration.
 - `tsconfig.json`: TypeScript configuration.
 
 ## License
+
 This project is licensed under the ISC License - see the [LICENSE.md](LICENSE.md) file for details.
