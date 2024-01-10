@@ -48,6 +48,12 @@ Make sure you have the following installed on your machine:
 
 ### Running the Server
 
+- Run Build To generate js files in dist folder:
+
+  ```bash
+  npm run build
+  ```
+
 - Run the development server:
 
   ```bash
