@@ -2,6 +2,7 @@ import { NextFunction, Request ,Response} from 'express';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import User from '../models/user';
+import { ACCESS_TOKEN_SECRET } from '../constants/constants';
 
 dotenv.config();
 export const authJWTByRole = (roles: string[]) => async (
@@ -10,7 +11,7 @@ export const authJWTByRole = (roles: string[]) => async (
     next: NextFunction
   ): Promise<void>=>{
 
-    
+    const tokenSecret = process.env.TOKEN_SECRET || ACCESS_TOKEN_SECRET
     const token = req.headers.authorization?.split(" ")[1] || req.cookies.token;
       if (!token) {
         res.status(401).json({
@@ -22,7 +23,7 @@ export const authJWTByRole = (roles: string[]) => async (
         return;
       }
 
-      const decodedData:any = await jwt.verify(token, 'ACCESS_TOKEN_SECRET') ;
+      const decodedData:any = await jwt.verify(token, tokenSecret) ;
 
 
       const { UserInfo } = decodedData
@@ -57,6 +58,7 @@ export const authJWTByRole = (roles: string[]) => async (
     try {
         
     } catch (error) {
-        
+      console.error(error);
+      res.status(500).json({ message: 'Internal Server Error' });
     }
 }

@@ -3,6 +3,7 @@ import express from "express";
 import { refreshToken } from "../controllers/refresh";
 import { signUpUser } from "../controllers/signup";
 import { signInUser } from "../controllers/signin";
+import { loginLimiter } from "../utils/loginLimitHandler";
 
 
 const router = express.Router();
@@ -60,6 +61,46 @@ const router = express.Router();
  */
 
 router.post('/signup', signUpUser);
+// /**
+//  * @swagger
+//  * /auth/login:
+//  *   post:
+//  *     summary: Authenticate a user
+//  *     tags: [Authentication]
+//  *     requestBody:
+//  *       description: User credentials for authentication
+//  *       required: true
+//  *       content:
+//  *         application/json:
+//  *           schema:
+//  *             type: object
+//  *             properties:
+//  *               email:
+//  *                 type: string
+//  *               password:
+//  *                 type: string
+//  *                 format: password
+//  *     responses:
+//  *       '200':
+//  *         description: Successful authentication
+//  *         content:
+//  *           application/json:
+//  *             example:
+//  *               token: "eyJhbGciOiJIUzI1NiIsInR5CI6IkpXVCJ9..."
+//  *               user: { id: 1, email: "user@example.com", role: "user" }
+//  *       '401':
+//  *         description: Invalid credentials
+//  *         content:
+//  *           application/json:
+//  *             example:
+//  *               message: "Invalid credentials"
+//  *       '500':
+//  *         description: Internal Server Error
+//  *         content:
+//  *           application/json:
+//  *             example:
+//  *               error: "Internal Server Error"
+//  */
 /**
  * @swagger
  * /auth/login:
@@ -76,9 +117,11 @@ router.post('/signup', signUpUser);
  *             properties:
  *               email:
  *                 type: string
+ *                 example: user@example.com
  *               password:
  *                 type: string
  *                 format: password
+ *                 example: your_password_here
  *     responses:
  *       '200':
  *         description: Successful authentication
@@ -100,7 +143,7 @@ router.post('/signup', signUpUser);
  *             example:
  *               error: "Internal Server Error"
  */
-router.post('/login', signInUser );
+router.post('/login',loginLimiter, signInUser );
 
 /**
  * @swagger

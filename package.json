@@ -2,7 +2,7 @@
   "name": "userauthenticationauthorization",
   "version": "1.0.0",
   "description": "sequelize postgress express server",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
     "start": "nodemon dist/server.js",
     "dev": "nodemon --exec ts-node src/server.ts",
@@ -10,7 +10,7 @@
     "test": "jest --watchAll --collect-coverage --testPathIgnorePatterns \".*\\.ts$\" "
   },
   "keywords": [],
-  "author": "",
+  "author": "mwangi john",
   "license": "ISC",
   "dependencies": {
     "@types/swagger-ui-express": "^4.1.6",

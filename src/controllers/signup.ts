@@ -3,8 +3,15 @@
 import express from 'express';
 import User from '../models/user';
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+import { ACCESS_TOKEN_SECRET } from '../constants/constants';
+dotenv.config();
 
 export const signUpUser = async (req: express.Request, res: express.Response): Promise<void> => {
+  
+  const tokenSecret = process.env.TOKEN_SECRET || ACCESS_TOKEN_SECRET
+
+
   try {
     const { username, firstname, lastname, email, password, role } = req.body;
 
@@ -47,7 +54,7 @@ export const signUpUser = async (req: express.Request, res: express.Response): P
 
     const accessToken = jwt.sign(
         token,
-        'ACCESS_TOKEN_SECRET'
+        tokenSecret
     );
     const { password:savedPassword ,role:userRole, ...rest } = newUser.dataValues
 

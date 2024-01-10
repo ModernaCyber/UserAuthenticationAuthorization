@@ -2,12 +2,17 @@
 import express from 'express';
 import jwt, { VerifyErrors } from 'jsonwebtoken';
 import User from '../models/user';
+import { ACCESS_TOKEN_SECRET } from '../constants/constants';
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const refreshToken = async (
    req: express.Request,
    res: express.Response
 ): Promise<void> => {
    try {
+      const tokenSecret = process.env.TOKEN_SECRET || ACCESS_TOKEN_SECRET
+
       const refreshToken = req.headers.authorization?.split(' ')[1] || req.body.token;
 
       console.log(`Refreshing token: ${refreshToken}`);
@@ -35,7 +40,7 @@ export const refreshToken = async (
       // create a new token for the user
       const newAccessToken = jwt.sign(
          { UserInfo: decodedData.UserInfo, exp: Math.floor(Date.now() / 1000) + 60 * 60 },
-         'ACCESS_TOKEN_SECRET'
+         tokenSecret
       );
 
       // send the new access token to the user 

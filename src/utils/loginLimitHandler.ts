@@ -4,7 +4,7 @@ import { Request, Response, NextFunction } from "express";
 
 export const loginLimiter = rateLimit({
   windowMs: 60 * 1000,  // 1 minute
-  max: 4, 
+  max: 2, 
   message: {
     message:
       "Too many login attempts from this IP, please try again after some time.",
@@ -14,7 +14,7 @@ export const loginLimiter = rateLimit({
     req: Request,
     res: Response,
     next: NextFunction,
-    options: any // Adjust the type accordingly, if possible
+    options: any 
   ) => {
     logEvents(
       `Too Many Requests: ${options.message.message}\t${req.method}\turl: ${req.url}\thost: ${req.headers.host}\tlocation: ${req.headers.location}\torigin: ${req.headers.origin}\tip: ${req.ip}\t`,

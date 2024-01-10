@@ -84,18 +84,18 @@ Make sure you have the following installed on your machine:
 
   - `config/`: Configuration files.
   - `controllers/`: Request handlers.
-  - `db/`: Database configuration and connection.
+  - `db/`: Sequelize Database configuration and connection.
   - `middleware/`: Middleware functions.
   - `models/`: Sequelize models.
   - `routes/`: Express route definitions.
   - `utils/`: Utility functions.
-  - `app.ts`: Express application setup.
-  - `server.ts`: Server entry point.
+  - `server.ts`: Server entry point with Express application setup.
 
-- `test/`: Test files.
+- `__test__/`: Test files.
 - `.env`: Environment variables configuration.
 - `jest.config.js`: Jest configuration.
 - `tsconfig.json`: TypeScript configuration.
+- `interviewAuthenticationAuthorizatio.postman_collection.json`: postman collection
 
 ## License
 

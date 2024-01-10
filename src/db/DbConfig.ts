@@ -19,7 +19,7 @@ export const dialectMapping: Record<string, Dialect> = {
   mysql: 'mysql',
   postgres: 'postgres',
 };
-const dialect = dialectMapping[DB_TYPE || 'postgres'] as Dialect;
+const dialect = dialectMapping[ DB_TYPE || 'postgres'] as Dialect;
 
 const sequelize = new Sequelize({
   database: DB_NAME,

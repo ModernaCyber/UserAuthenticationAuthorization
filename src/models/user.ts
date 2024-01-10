@@ -1,10 +1,11 @@
 import { Table, Column, Model, DataType, CreatedAt, UpdatedAt, BeforeCreate, BeforeUpdate } from 'sequelize-typescript';
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
+import { TABLE_SUFFIX } from '../constants/constants';
 
 dotenv.config();
 
-const tableSuffix: string = process.env.TABLE_SUFFIX || 'auth_auth_test';
+const tableSuffix: string = process.env.TABLE_SUFFIX || TABLE_SUFFIX;
 
 @Table({
   timestamps: true,
