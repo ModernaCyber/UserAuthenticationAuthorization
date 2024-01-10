@@ -1,18 +1,77 @@
+
 # User Authentication and Authorization Express App
 
 This project is an Express.js server built with TypeScript, Sequelize, and PostgreSQL for user authentication and authorization. It uses JSON Web Tokens (JWT) for token-based authentication and supports two user roles: "user" and "admin."
 
-## Prerequisites
+## Table of Contents
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+  - [Running the Server](#running-the-server)
+  - [Testing](#testing)
+  - [Swagger Documentation](#swagger-documentation)
+- [Folder Structure](#folder-structure)
+- [Dependencies](#dependencies)
+- [Development Dependencies](#development-dependencies)
+- [License](#license)
+  
+## Getting Started
 
-- Node.js installed (version 18 or higher)
-- PostgreSQL database installed and running
+### Prerequisites
+Make sure you have the following installed on your machine:
+- [Node.js](https://nodejs.org/)
+- [PostgreSQL](https://www.postgresql.org/)
 
-## Installation
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/userauthenticationauthorization.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd userauthenticationauthorization
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-1. **Clone the repository:**
+## Usage
 
-   git clone https://github.com/jj/ts_exp_server.git
+### Running the Server
+- Run the development server:
+  ```bash
+  npm run dev
+  ```
+- The server will be running at http://localhost:3000 by default.
 
-## Navigate into the project directory
+### Testing
+- Run tests:
+  ```bash
+  npm test
+  ```
 
-2. **Install Dependecies:**
+### Swagger Documentation
+- Swagger documentation is available at http://localhost:3000/api-docs after starting the server.
+
+## Folder Structure
+- `dist/`: Compiled TypeScript files (output of the build process).
+- `node_modules/`: Node.js modules and dependencies.
+- `src/`: Source code.
+  - `config/`: Configuration files.
+  - `controllers/`: Request handlers.
+  - `db/`: Database configuration and connection.
+  - `middleware/`: Middleware functions.
+  - `models/`: Sequelize models.
+  - `routes/`: Express route definitions.
+  - `utils/`: Utility functions.
+  - `app.ts`: Express application setup.
+  - `server.ts`: Server entry point.
+- `test/`: Test files.
+- `.env`: Environment variables configuration.
+- `jest.config.js`: Jest configuration.
+- `tsconfig.json`: TypeScript configuration.
+
+## License
+This project is licensed under the ISC License - see the [LICENSE.md](LICENSE.md) file for details.
