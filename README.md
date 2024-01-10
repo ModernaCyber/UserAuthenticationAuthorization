@@ -29,7 +29,11 @@ Make sure you have the following installed on your machine:
 1. Clone the repository:
 
    ```bash
+<<<<<<< HEAD
    git clone https://github.com/ModernaCyber/UserAuthenticationAuthorization.git
+=======
+   git clone https://github.com/ModernaCyber/userauthenticationauthorization.git
+>>>>>>> 982db9afb1bbfd4030caf10000334ea7f012c245
    ```
 
 2. Navigate to the project directory:
