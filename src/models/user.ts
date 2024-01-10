@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const tableSuffix: string = process.env.TABLE_SUFFIX || '';
+const tableSuffix: string = process.env.TABLE_SUFFIX || 'auth_auth_test';
 
 @Table({
   timestamps: true,

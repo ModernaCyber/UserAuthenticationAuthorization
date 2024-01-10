@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "76a05110-2852-4391-8528-bab5444014fc",
+		"name": "interviewAuthenticationAuthorizatio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17814731",
+		"_collection_link": "https://martian-trinity-873596.postman.co/workspace/My-Workspace~b4b4efc6-9565-45ce-8d03-3b1fdca30bbe/collection/17814731-76a05110-2852-4391-8528-bab5444014fc?action=share&source=collection_link&creator=17814731"
+	},
+	"item": [
+		{
+			"name": "refrehToken",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJpZCI6IjU3ODRjOWY5LTFmZjYtNGJmOC04Mjg5LTA0OTY1ODJkZTY4ZSIsInJvbGUiOiJhZG1pbiJ9LCJleHAiOjE3MDQ4NzQ5NTgsImlhdCI6MTcwNDg3MTM1OH0.jIZTWIDDKYSnYJiuh796Z1I_WJ5MC4KLxwYzbWPfPtM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJpZCI6IjU3ODRjOWY5LTFmZjYtNGJmOC04Mjg5LTA0OTY1ODJkZTY4ZSIsInJvbGUiOiJhZG1pbiJ9LCJleHAiOjE3MDQ4NzQ5NTgsImlhdCI6MTcwNDg3MTM1OH0.jIZTWIDDKYSnYJiuh796Z1I_WJ5MC4KLxwYzbWPfPtM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/refresh",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userTest",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJpZCI6IjU3ODRjOWY5LTFmZjYtNGJmOC04Mjg5LTA0OTY1ODJkZTY4ZSIsInJvbGUiOiJhZG1pbiJ9LCJleHAiOjE3MDQ4NzQ5NTgsImlhdCI6MTcwNDg3MTM1OH0.jIZTWIDDKYSnYJiuh796Z1I_WJ5MC4KLxwYzbWPfPtM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/user/personal/fabee1b9-11c1-4855-ae25-e37a6f0a22dc",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"personal",
+						"fabee1b9-11c1-4855-ae25-e37a6f0a22dc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adminTest",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJpZCI6ImZhYmVlMWI5LTExYzEtNDg1NS1hZTI1LWUzN2E2ZjBhMjJkYyIsInJvbGUiOiJhZG1pbiJ9LCJleHAiOjE3MDQ4NzY3ODMsImlhdCI6MTcwNDg3MzE4M30.DA2c58EBMzlaPaCf8rbym5qR5nZGzm2_Lbl_TEqEH5M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"john doe two\",\r\n    \"firstname\": \"john full name\",\r\n    \"lastname\": \"jj\",\r\n    \"password\": \"password\",\r\n    \"email\": \"johndoe@auth.test\",\r\n    \"role\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/admin",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"john doe two\",\r\n    \"firstname\": \"john full name\",\r\n    \"lastname\": \"jj\",\r\n    \"password\": \"password\",\r\n    \"email\": \"johndoe@auth.test\",\r\n    \"role\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"password\": \"password\",\r\n    \"email\": \"johndoe@auth.test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

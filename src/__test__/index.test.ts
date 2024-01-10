@@ -1,12 +1,15 @@
-import { describe } from "node:test";
+import supertest from 'supertest';
+import { describe, it, expect } from '@jest/globals';
+import { app } from '../server';
 
-describe("Main server test",()=>{
-    it ("should test server.js",async()=>{
-
-        const response = await fetch("http://localhost:3000/");
-
-        expect(response.status).toBe(200)
-
-
-    }); //npm i --save-dev @types/jest
-})
+describe('Main server test', () => {
+  it('should test server.js', async () => {
+    // const response = await supertest(app).get('/');
+    // expect(response.status).toBe(200);
+    return supertest(app)
+      .get('/')
+      .then((response) => {
+        expect(response.status).toBe(200);
+      });
+  });
+});
