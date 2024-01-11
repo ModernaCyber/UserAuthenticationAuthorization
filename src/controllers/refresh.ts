@@ -15,21 +15,24 @@ export const refreshToken = async (
 
       const refreshToken = req.headers.authorization?.split(' ')[1] || req.body.token;
 
-      console.log(`Refreshing token: ${refreshToken}`);
+      // console.log(`Refreshing token: ${refreshToken}`);
+
       if (!refreshToken) {
          res.status(401).json({ message: 'Refresh token is required' });
          return;
       }
 
-      const decodedData:any = await jwt.verify(refreshToken, 'ACCESS_TOKEN_SECRET') ;
+      const decodedData:any = await jwt.verify(refreshToken, tokenSecret) ;
 
 
       // Retrieve user from the database
       const { UserInfo } = decodedData
 
+      // console.log(`Refreshing -------------------: ${UserInfo.id}`);
+
       const user = await User.findByPk(UserInfo.id);
 
-      console.log(user);
+      // console.log(user);
 
       if (!user) {
          res.status(403).json({ message: 'User not authorized' });

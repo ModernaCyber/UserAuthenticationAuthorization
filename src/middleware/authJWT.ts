@@ -12,7 +12,8 @@ export const authJWTByRole = (roles: string[]) => async (
   ): Promise<void>=>{
 
     const tokenSecret = process.env.TOKEN_SECRET || ACCESS_TOKEN_SECRET
-    const token = req.headers.authorization?.split(" ")[1] || req.cookies.token;
+    
+    const token = req.headers?.authorization?.split(" ")[1] || req?.cookies?.token;
       if (!token) {
         res.status(401).json({
           status: 401,
