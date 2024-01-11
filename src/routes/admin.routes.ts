@@ -13,7 +13,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /admin/test/post:
+ * /admin/:
  *   post:
  *     summary: Test POST operation (Admin Only)
  *     tags: [Admin]

@@ -117,11 +117,11 @@ router.post('/signup', signUpUser);
  *             properties:
  *               email:
  *                 type: string
- *                 example: user@example.com
+ *                 example: johndoe@auth.test
  *               password:
  *                 type: string
  *                 format: password
- *                 example: your_password_here
+ *                 example: password
  *     responses:
  *       '200':
  *         description: Successful authentication
@@ -151,6 +151,17 @@ router.post('/login',loginLimiter, signInUser );
  *   post:
  *     summary: Refresh user token
  *     tags: [Authentication]
+ *     requestBody:
+ *       description: User token for authentication
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               token:
+ *                 type: string
+ *                 example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJpZCI6ImZhYmVlMWI5LTExYzEtNDg1NS1hZTI1LWUzN2E2ZjBhMjJkYyIsInJvbGUiOiJhZG1pbiJ9LCJleHAiOjE3MDQ5Njk3MTYsImlhdCI6MTcwNDk2NjExNn0.cwWWU-PKIlMpzancyp1_o-T-iKC2KVl5dHa5xMaAat4
  *     responses:
  *       '200':
  *         description: Token refresh successful

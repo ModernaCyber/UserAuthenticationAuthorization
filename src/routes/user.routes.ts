@@ -19,7 +19,12 @@ const router = express.Router();
  *     summary: Get user details (User and Admin Only)
  *     tags: [User]
  *     security:
- *       - bearerAuth: []
+ *         - authentication: []
+ *     securityDefinitions:
+ *        authentication:
+ *            type:jwt
+ *            name:Authorization
+ *            in:header
  *     parameters:
  *       - in: path
  *         name: id
