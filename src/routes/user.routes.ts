@@ -12,6 +12,7 @@ import { UserPersonalController } from "../controllers/user";
 
 const router = express.Router();
 
+
 /**
  * @swagger
  * /user/personal/{id}:
@@ -27,6 +28,11 @@ const router = express.Router();
  *         schema:
  *           type: string
  *         description: The user ID
+ *       - in: header
+ *         name: Authorization
+ *         type: string
+ *         required: true
+ *         description: Bearer Token for authentication (e.g., "Bearer token")
  *     responses:
  *       '200':
  *         description: Operation successful

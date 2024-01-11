@@ -151,6 +151,12 @@ router.post('/login',loginLimiter, signInUser );
  *   post:
  *     summary: Refresh user token
  *     tags: [Authentication]
+ *     parameters:
+ *       - in: header
+ *         name: Authorization
+ *         type: string
+ *         required: true
+ *         description: Bearer Token for authentication (e.g., "Bearer token")
  *     responses:
  *       '200':
  *         description: Token refresh successful

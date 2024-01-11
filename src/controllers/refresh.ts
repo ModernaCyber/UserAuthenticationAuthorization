@@ -15,7 +15,8 @@ export const refreshToken = async (
 
       const refreshToken = req.headers.authorization?.split(' ')[1] || req.body.token;
 
-      console.log(`Refreshing token: ${refreshToken}`);
+      // console.log(`Refreshing token: ${refreshToken}`);
+
       if (!refreshToken) {
          res.status(401).json({ message: 'Refresh token is required' });
          return;
@@ -29,7 +30,7 @@ export const refreshToken = async (
 
       const user = await User.findByPk(UserInfo.id);
 
-      console.log(user);
+      // console.log(user);
 
       if (!user) {
          res.status(403).json({ message: 'User not authorized' });

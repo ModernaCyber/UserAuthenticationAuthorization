@@ -3,6 +3,7 @@ import User from '../models/user';
 
 export const UserPersonalController = async (req: express.Request, res: express.Response): Promise<void> => {
   try {
+    
     const userId = req.params.id;
 
     if (!userId) {
