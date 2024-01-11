@@ -5,7 +5,6 @@ import User from '../models/user';
 
 dotenv.config();
 
-
 const {
   DB_TYPE,
   DB_NAME,
